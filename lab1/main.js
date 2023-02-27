@@ -7,6 +7,9 @@ var lingeringLine = "";
 function my_printf(format_string,param){
 	for(var i=0;i<format_string.length;i++){
 		if((format_string.charAt(i) == '#') && (format_string.charAt(i+1) == 'k')){
+
+			param = toggleLetterCase(param);
+
 			process.stdout.write(param);
 			i++;
 		}else{
@@ -14,6 +17,22 @@ function my_printf(format_string,param){
 		}
 	}
 	console.log("");
+}
+
+function toggleLetterCase (param) {
+	param = param.toString();
+	for(let i = 0; i < param.length; i++) {
+		
+		const letter = param[i];
+
+		if (letter == letter.toUpperCase()) {
+			param[i] = letter.toLowerCase();
+		} else {
+			param[i] = letter.toUpperCase();
+		}
+	}
+
+	return param;
 }
 
 process.stdin.on('data', function(chunk) {
