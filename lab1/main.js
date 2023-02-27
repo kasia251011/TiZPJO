@@ -5,9 +5,10 @@ process.stdin.setEncoding('utf8');
 var lingeringLine = "";
 
 function my_printf(format_string,param){
+	process.stdout.write(param);
 	for(var i=0;i<format_string.length;i++){
 		if((format_string.charAt(i) == '#') && (format_string.charAt(i+1) == 'k')){
-
+			
 			param = toggleLetterCase(param);
 
 			process.stdout.write(param);
@@ -20,7 +21,6 @@ function my_printf(format_string,param){
 }
 
 function toggleLetterCase (param) {
-	param = param.toString();
 	for(let i = 0; i < param.length; i++) {
 		
 		const letter = param[i];
