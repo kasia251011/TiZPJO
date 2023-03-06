@@ -5,8 +5,10 @@ import sys
 def my_printf(format_string,param):
     #print(format_string)
     shouldDo=True
+    shouldDo2=True
+    shouldDo3=True
     for idx in range(0,len(format_string)):
-        if shouldDo:
+        if shouldDo and shouldDo2 and shouldDo3:
             if format_string[idx] == '#' and format_string[idx+1] == 'k':
             	param = param.swapcase()
                 print(param,end="")
@@ -16,10 +18,15 @@ def my_printf(format_string,param):
                 param = param.rjust(int(format_string[idx+2]), ' ')
                 print(param,end="")
                 shouldDo=False
+                shouldDo2=False
+                shouldDo3=False
             else:
-                
                 print(format_string[idx],end="")
         else:
+            if shouldDo2 == True:
+                shouldDo3 = True
+            if shouldDo == True:
+                shouldDo2 = True
             shouldDo=True
     print("")
 
