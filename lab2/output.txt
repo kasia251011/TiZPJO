@@ -3,8 +3,8 @@ totafsd TEST2 fdsfsdf fdfjs
 jfldjfldk # wynik
 fjdfsfds # k alal
 djfjkldsjf TESt5 jjjjjj fsfjdljfdlsj flj ldfj
-gjjkdsljflds     TesT6 jdlkfjdslf
-fjdslkfjdl TEST7 tttttt
+gjjkdsljflds  TesT6 jdlkfjdslf
+fjdslkfjdl    TEST7 tttttt
 fjdlsjfkl TEST8 oooolll
 rwrewrew TEST9 fjdslkjfdl
 fjdlskjfldjflj  TEST10 rewrewrew

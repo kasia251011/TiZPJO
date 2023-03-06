@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import sys
+import re
 
 def my_printf(format_string,param):
     #print(format_string)
@@ -14,8 +15,9 @@ def my_printf(format_string,param):
                 print(param,end="")
                 shouldDo=False
             elif format_string[idx] == '#' and format_string[idx+1] == '.' and format_string[idx+2].isnumeric() and format_string[idx+3] == 'k':
+                num = re.search(r'\d+', format_string).group()
                 param = param.swapcase()
-                param = param.rjust(int(format_string[idx+2]), ' ')
+                param = param.rjust(int(num), ' ')
                 print(param,end="")
                 shouldDo=False
                 shouldDo2=False
