@@ -10,7 +10,7 @@ def my_printf(format_string,param):
     for idx in range(0,len(format_string)):
         if shouldDo and shouldDo2 and shouldDo3:
             if format_string[idx] == '#' and format_string[idx+1] == 'k':
-            	param = param.swapcase()
+                param = param.swapcase()
                 print(param,end="")
                 shouldDo=False
             elif format_string[idx] == '#' and format_string[idx+1] == '.' and format_string[idx+2].isnumeric() and format_string[idx+3] == 'k':
