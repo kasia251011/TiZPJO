@@ -11,8 +11,9 @@ def my_printf(format_string,param):
             	param = param.swapcase()
                 print(param,end="")
                 shouldDo=False
-            elif format_string[idx] == '#' and format_string[idx+1] == '.' and format_string[idx+2] == '#' and format_string[idx+3] == 'k':
+            elif format_string[idx] == '#' and format_string[idx+1] == '.' and format_string[idx+2].isnumeric() and format_string[idx+3] == 'k':
                 param = param.swapcase()
+                param = param.rjust(int(format_string[idx+2]), ' ')
                 print(param,end="")
                 shouldDo=False
             else:
