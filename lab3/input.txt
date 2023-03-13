@@ -6,15 +6,15 @@ jfldjfldk #.3k wynik
 test3
 jfldjfldk # k wynik
 tEst4
-jfldjfldk#k wynik
+jfldjfldk #k wynik
 test5
-jfldjfldk#8k wynik
+jfldjfldk #8k wynik
 test6
-jfldjfldk#3k wynik
+jfldjfldk #3k wynik
 tesT7
 jfldjfldk #.8k wynik
 test8
-jfldjfldk # 3k wynik
-test9
-jfldjfldk # .2k wynik
+jfldjfldk #11k wynik
+tESt9
+jfldjfldk  # .2k wynik
 tESt10

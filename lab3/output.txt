@@ -1,3 +1,10 @@
 totafsdfsf TEST fdsfsdf
-totafsd  TEST2 fdsfsdf fdfjs
+totafsd  tESt2 fdsfsdf fdfjs
 jfldjfldk TES wynik
+jfldjfldk # k wynik
+jfldjfldk TEST5 wynik
+jfldjfldk    TEST6 wynik
+jfldjfldk TESt7 wynik
+jfldjfldk TEST8 wynik
+jfldjfldk       TesT9 wynik
+jfldjfldk # .2k wynik
