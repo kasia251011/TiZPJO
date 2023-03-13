@@ -3,7 +3,15 @@
 import sys
 
 def my_printf(format_string,param):
+    words = format_string.split()
+
+    param = param.swapcase()
     
+    for i in range(len(words)):
+        if words[i] == "k#":
+            words[i] = param
+    
+    print(" ".join(words))
 
 data=sys.stdin.readlines()
 
