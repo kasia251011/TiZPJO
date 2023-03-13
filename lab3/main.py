@@ -1,31 +1,41 @@
 #!/usr/bin/env python3
 
 import sys
+import re
 
 def my_printf(format_string,param):
-    words = format_string.split()
 
     param = param.swapcase()
     
-    for i in range(len(words)):
-        if words[i] == "#k":
-            words[i] = param
-        elif words[i].startswith("#.") and words[i].endswith("k"):
-            num = words[i][2:-1]
-            if num.isnumeric():
-                if int(num) < len(param):
-                    str = param[:int(num)]
-                    words[i] = str
-                else:
-                    words[i] = param
-        elif words[i].startswith("#") and words[i].endswith("k"):
-            num = words[i][1:-1]
-            if num.isnumeric():
-                str = param.rjust(int(num), ' ')
-                words[i] = str
-                
+    x = re.search("#\.\d+k", format_string)
     
-    print(" ".join(words))
+    if x:
+        format = x.group()
+       	num = format[2:-1]
+        if num.isnumeric():
+          if int(num) < len(param):
+            str = param[:int(num)]
+            x = re.sub("#\.\d+k", str, format_string)
+            print(x)
+            return
+          else:
+            str = param[:int(num)]
+            x = re.sub("#\.\d+k", str, format_string)
+            print(x)
+            return
+    x = re.search("#\d+k", format_string)
+    
+    if x:
+        format = x.group()
+       	num = format[1:-1]
+        if num.isnumeric():
+          str = param.rjust(int(num), ' ')
+          x = re.sub("#\d+k", str, format_string)
+          print(x)
+          return
+    x = re.search("#k", format_string)
+    
+    print(re.sub("#k", param, format_string))
 
 data=sys.stdin.readlines()
 

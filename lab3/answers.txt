@@ -7,4 +7,4 @@ jfldjfldk    TEST6 wynik
 jfldjfldk TESt7 wynik
 jfldjfldk TEST8 wynik
 jfldjfldk       TesT9 wynik
-jfldjfldk # .2k wynik
+jfldjfldk  # .2k wynik
