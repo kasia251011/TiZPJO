@@ -8,7 +8,7 @@ def my_printf(format_string,param):
     param = param.swapcase()
     
     for i in range(len(words)):
-        if words[i] == "k#":
+        if words[i] == "#k":
             words[i] = param
         elif words[i].startswith("#.") and words[i].endswith("k"):
             num = words[i][2:-1]
