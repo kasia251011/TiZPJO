@@ -18,6 +18,12 @@ def my_printf(format_string,param):
                     words[i] = str
                 else:
                     words[i] = param
+        elif words[i].startswith("#") and words[i].endswith("k"):
+            num = words[i][1:-1]
+            if num.isnumeric():
+                str = param.rjust(int(num), ' ')
+                words[i] = str
+                
     
     print(" ".join(words))
 
