@@ -25,13 +25,17 @@ function toggleLetterCase (param) {
 		const letter = param[i];
 
 		if (letter == letter.toUpperCase()) {
-			param[i] = letter.toLowerCase();
+			param.replaceAt(i, letter.toLowerCase());
 		} else {
-			param[i] = letter.toUpperCase();
+			param.replaceAt(i, letter.toUpperCase());
 		}
 	}
 
 	return param;
+}
+
+String.prototype.replaceAt = function(index, replacement) {
+	return this.substring(0, index) + replacement + this.substring(index + replacement.length);
 }
 
 process.stdin.on('data', function(chunk) {
