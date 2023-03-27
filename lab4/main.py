@@ -5,6 +5,9 @@ import re
 
 def my_printf(format_string,param):
     param = str(param)[::-1]
+    param = param.lstrip("0")
+    if param == "":
+    	param = "0"
     print(re.sub("#g", param, format_string))
 
 data=sys.stdin.readlines()
