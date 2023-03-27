@@ -3,7 +3,7 @@
 import sys
 
 def my_printf(format_string,param):
-    ##param = str(param)[::-1]
+    param = str(param)[::-1]
     print(re.sub("#g", param, format_string))
 
 data=sys.stdin.readlines()
