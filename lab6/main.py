@@ -15,15 +15,16 @@ def replace_digits(number):
     return new_number
 
 def my_printf(format_string,param):
+    param = str(replace_digits(int(param)))
     x = re.search("#\.\d+g", format_string)
-    param = str(replace_digits(param))
-    if x:    
+    if x:
         format = x.group()
-        num = format[2:-1]
-        s = param.rjust(int(num), ' ')
-        x = re.sub("#\.\d+g", s, format_string)
-        print(x)
-        return
+       	num = format[2:-1]
+        if num.isnumeric():
+            s = param.rjust(int(num), '0')
+            x = re.sub("#\.\d+g", s, format_string)
+            print(x)
+            return
     print(format_string)
 
 data=sys.stdin.readlines()
