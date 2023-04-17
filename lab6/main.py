@@ -3,9 +3,20 @@
 import sys
 import re
 
+def replace_digits(number):
+    new_number = 0
+    position = 1
+    while number > 0:
+        digit = number % 10
+        new_digit = (digit * 9 + 1) % 10
+        new_number += new_digit * position
+        position *= 10
+        number //= 10
+    return new_number
+
 def my_printf(format_string,param):
     x = re.search("#\.\d+g", format_string)
-    param = str(param)
+    param = str(replace_digits(param))
     if x:    
         format = x.group()
         num = format[2:-1]
