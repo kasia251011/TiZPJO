@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 
 import sys
+import re
 
 def my_printf(format_string,param):
-    
+    x = re.sub("#j", s, format_string)
+    print(x)
 
 data=sys.stdin.readlines()
 
