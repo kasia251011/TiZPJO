@@ -4,6 +4,7 @@ import sys
 import re
 
 def my_printf(format_string,param):
+    param = hex(param)
     x = re.sub("#j", s, format_string)
     print(x)
 
