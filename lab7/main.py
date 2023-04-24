@@ -5,6 +5,12 @@ import re
 
 def my_printf(format_string,param):
     param = hex(param)
+    param = param.replace("a","g")
+    param = param.replace("b","h")
+    param = param.replace("c","i")
+    param = param.replace("d","j")
+    param = param.replace("e","k")
+    param = param.replace("f","l")
     x = re.sub("#j", s, format_string)
     print(x)
 
