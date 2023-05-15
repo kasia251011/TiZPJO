@@ -4,34 +4,27 @@ import sys
 import re
 
 def my_printf(format_string,param):
-    #print(format_string)
-    shouldDo=True
-    shouldDo2=True
-    shouldDo3=True
-    for idx in range(0,len(format_string)):
-        if shouldDo and shouldDo2 and shouldDo3:
-            if format_string[idx] == '#' and format_string[idx+1] == 'k':
-                param = param.swapcase()
-                print(param,end="")
-                shouldDo=False
-            elif format_string[idx] == '#' and format_string[idx+1] == '.' and format_string[idx+2].isnumeric() and format_string[idx+3] == 'k':
-                num = re.search(r'\d+', format_string).group()
-                param = param.swapcase()
-                param = param.rjust(int(num), ' ')
-                print(param,end="")
-                shouldDo=False
-                shouldDo2=False
-                shouldDo3=False
-            else:
-                print(format_string[idx],end="")
-        else:
-            if shouldDo2 == True:
-                shouldDo3 = True
-            if shouldDo == True:
-                shouldDo2 = True
-            shouldDo=True
-    print("")
-
+    param = param.swapcase()
+    
+    x = re.search("#\.\d+k", format_string)
+    
+    if x:
+        format = x.group()
+       	num = format[2:-1]
+        if num.isnumeric():
+          if int(num) < len(param):
+            str = param[:int(num)]
+            x = re.sub("#\.\d+k", str, format_string)
+            print(x)
+            return
+          else:
+            str = param[:int(num)]
+            x = re.sub("#\.\d+k", str, format_string)
+            print(x)
+            return
+    x = re.search("#k", format_string)
+    
+    print(re.sub("#k", param, format_string))
 data=sys.stdin.readlines()
 
 for i in range(0,len(data),2):
