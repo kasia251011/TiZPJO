@@ -23,9 +23,7 @@ def my_printf(format_string,param):
         print(x)
         return
             
-    
-    x = re.sub("#j", param, format_string)
-    print(x)
+    print(format_string)
 
 data=sys.stdin.readlines()
 
