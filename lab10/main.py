@@ -7,7 +7,13 @@ def my_printf(format_string,param):
     N = len(str(param))
     F = int((int(param)*2)/N)
     
-    print(re.sub("#a", str(F), format_string))
+    if F%2 == 0 :
+        print(re.sub("#a", str(F), format_string))
+    else:
+        HEX = str(hex(int(F)))[2:]
+        print(re.sub("#a", HEX, format_string))
+    
+    
 
 data=sys.stdin.readlines()
 
