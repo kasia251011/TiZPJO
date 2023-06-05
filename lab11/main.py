@@ -2,6 +2,25 @@
 
 import sys
 
+def convert(number):
+    res = bin(number)[2:]
+    res = res[::-1]
+    res_list = list(res)
+    
+    tab = 'abcdefghij'
+    tab_index = 0
+    
+    for i in range(len(res)):
+        letter = tab[tab_index]
+        if res_list[i] == '1':
+            res_list[i] = letter
+        tab_index += 1
+        if tab_index == 10:
+            tab_index = 0
+    res = ''.join(res_list)
+    res = res[::-1]
+    return res
+
 def my_printf(format_string,param):
     #print(format_string)
     shouldDo=True
